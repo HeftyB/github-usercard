@@ -66,7 +66,7 @@ let cards = document.querySelector(".cards");
 
 function NewCard (data) {
 
-  let { avatar_url, name, login, location, url, followers, following, bio } = data;
+  let { avatar_url, name, login, location, html_url, followers, following, bio } = data;
 
   let card = document.createElement("div");
   let img = document.createElement("img");
@@ -87,7 +87,7 @@ function NewCard (data) {
   userName.classList.add("username");
   
   img.setAttribute("src", `${avatar_url}`);
-  urls.setAttribute("href", `${url}`);
+  urls.setAttribute("href", `${html_url}`);
 
   card.appendChild(img);
   card.appendChild(cardInfo);
@@ -104,7 +104,7 @@ function NewCard (data) {
   names.textContent = `${name}`;
   userName.textContent = `${login}`;
   locations.textContent = `${location}`;
-  urls.textContent = `${url}`;
+  urls.textContent = `${html_url}`;
   followerss.textContent = `${followers}`;
   followings.textContent = `${following}`;
   bios.textContent = `${bio}`;
